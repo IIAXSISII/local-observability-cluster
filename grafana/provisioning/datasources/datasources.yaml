@@ -1,0 +1,17 @@
+apiVersion: 1
+
+datasources:
+  - name: VictoriaMetrics
+    type: prometheus
+    uid: victoriametrics
+    url: http://victoriametrics:8428
+    access: proxy
+    isDefault: true
+    jsonData:
+      timeInterval: "15s"
+
+  - name: VictoriaTraces
+    type: jaeger
+    uid: victoriatraces
+    url: http://victoriatraces:10428/select/jaeger
+    access: proxy
